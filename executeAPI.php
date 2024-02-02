@@ -10,6 +10,12 @@ require './functions/setMediaLibrary.php';
 require './functions/findDeletedMedia.php';
 require './functions/deleteMedia.php';
 
+// LOG FILE FOLDER
+$logPath = 'logs';
+if (!is_dir($logPath)) {
+    if (mkdir($logPath, 0777, true)) {
+    }
+}
 // AUTHENTICATION
 $accessToken = getAuth();
 
