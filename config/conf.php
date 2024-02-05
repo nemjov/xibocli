@@ -8,3 +8,5 @@ $xiboserver = "www.xibocms.local";
 $share='/share/';
 // CREATE THIS FOLDER IN XIBO CMS
 $folderInCMS='API_Media';
+// LOG FILE FOLDER
+$logPath = 'logs';
