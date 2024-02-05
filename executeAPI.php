@@ -10,8 +10,7 @@ require './functions/setMediaLibrary.php';
 require './functions/findDeletedMedia.php';
 require './functions/deleteMedia.php';
 
-// LOG FILE FOLDER
-$logPath = 'logs';
+// CREATE LOG FOLDER IF NOT EXIST
 if (!is_dir($logPath)) {
     if (mkdir($logPath, 0777, true)) {
     }
