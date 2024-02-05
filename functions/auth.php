@@ -33,7 +33,6 @@ function getAuth()
         )->getBody();
 
         // Output the response
-        $json_data_pretty = json_encode($accessToken, JSON_PRETTY_PRINT);
         return $accessToken;
     } catch (RequestException $e) {
         echo 'Caught exception: ', $e->getMessage(), "\n";
