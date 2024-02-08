@@ -1,5 +1,5 @@
 <?php
-function createFolder($accessToken,$folderInCMS)
+function createFolder($accessToken)
 {
     require './config/conf.php';
     $curl = curl_init();
@@ -22,6 +22,5 @@ function createFolder($accessToken,$folderInCMS)
     ));
 
     $response = curl_exec($curl);
-
     curl_close($curl);
 }
