@@ -31,14 +31,15 @@ function setMediaLibrary($accessToken)
         $folder='';
         foreach ($dirs as $dir) {
             if($dir['text'] == $folderInCMS) {
-                return $dir['folderId'];
+                $folder= $dir['folderId'];
             }
         } // END FOREACH
         // CHECK IF FOLDER WAS FOUND
         if (empty($folder) && strlen(trim($folder)) === 0) {
-            createFolder($accessToken,$folderInCMS);
-            setMediaLibrary($accessToken);
+            createFolder($accessToken);
+            $folder=setMediaLibrary($accessToken);
         }
+        return $folder;
     } else {
         // Handle decoding error
         echo 'Error decoding JSON response';
