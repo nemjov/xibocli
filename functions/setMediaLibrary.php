@@ -24,17 +24,20 @@ function setMediaLibrary($accessToken)
     curl_close($curl);
     // JSON DECODE
     $data = json_decode($response, true);
-
 // Check if decoding was successful
     if ($data !== null) {
         // Now $data is a PHP array containing the decoded JSON data
         $dirs = $data[0]['children'];
-
+        $folder='';
         foreach ($dirs as $dir) {
-
-            if($dir['text'] == $folderInCMS){
+            if($dir['text'] == $folderInCMS) {
                 return $dir['folderId'];
             }
+        } // END FOREACH
+        // CHECK IF FOLDER WAS FOUND
+        if (empty($folder) && strlen(trim($folder)) === 0) {
+            createFolder($accessToken,$folderInCMS);
+            setMediaLibrary($accessToken);
         }
     } else {
         // Handle decoding error
