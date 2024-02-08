@@ -9,6 +9,7 @@ require './functions/sendFiles.php';
 require './functions/setMediaLibrary.php';
 require './functions/findDeletedMedia.php';
 require './functions/deleteMedia.php';
+require './functions/createFolder.php';
 
 // CREATE LOG FOLDER IF NOT EXIST
 if (!is_dir($logPath)) {
